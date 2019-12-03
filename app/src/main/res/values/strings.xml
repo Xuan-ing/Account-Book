@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">Account Book</string>
+    <string name="title_daily">Daily</string>
+    <string name="title_weekly">Weekly</string>
+    <string name="title_monthly">Monthly</string>
+    <string name="OptionsMenu_SignUp">I\'m new here</string>
+    <string name="OptionsMenu_SignIn">Sign In</string>
+    <string name="daily_myBudget">My Budget: </string>
+    <string name="daily_myBudget_change">Modify</string>
+    <string name="daily_myBudget_change_prompt">Enter your new budget: </string>
+    <string name="AlertDialog_PositiveButton">OK</string>
+    <string name="tableName">Details</string>
+    <string name="descriptionColumn">Description</string>
+    <string name="typeColumn">Type</string>
+    <string name="amountColumn">Amount</string>
+    <string name="checkColumn">IsChecked</string>
+    <string name="dateColumn">Date</string>
+    <string name="insertAmountOfMoney">Amount of money: </string>
+    <string name="insertDescriptionHint">Describe it here: </string>
+    <string name="incomePrompt">income</string>
+    <string name="expensePrompt">expense</string>
+    <string name="deleteButton">delete</string>
+    <string name="searchButton">search</string>
+    <string name="searchHint">only yyyy-MM-dd supported</string>
+</resources>
