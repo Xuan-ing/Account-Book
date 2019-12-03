@@ -7,13 +7,13 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f6628d8-78d1-4c09-8446-e42ad2a70efb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dhu/cst/the170910224andthe170120321/accountbook/ui/daily/DailyFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/checked.PNG" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/unchecked.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dhu/cst/the170910224andthe170120321/accountbook/ui/daily/DailyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dhu/cst/the170910224andthe170120321/accountbook/ui/daily/DailyFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dhu/cst/the170910224andthe170120321/accountbook/ui/daily/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dhu/cst/the170910224andthe170120321/accountbook/ui/daily/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_daily.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_daily.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
@@ -433,7 +433,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
