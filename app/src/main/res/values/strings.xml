@@ -22,4 +22,6 @@
     <string name="deleteButton">delete</string>
     <string name="searchButton">search</string>
     <string name="searchHint">only yyyy-MM-dd supported</string>
+    <string name="startDay">start from this date</string>
+    <string name="hintBarChart">show details in the last 7 days</string>
 </resources>

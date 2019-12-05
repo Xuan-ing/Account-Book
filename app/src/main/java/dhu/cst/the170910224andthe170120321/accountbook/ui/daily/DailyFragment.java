@@ -7,13 +7,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -54,6 +54,7 @@ public class DailyFragment extends Fragment {
     private SmartTable<Item> smartTable;
     private Button deleteButton, searchButton;
     private TextView searchText;
+    private ImageView imageView;
     private List<Integer> isCheck;
     private String today;
 
@@ -62,38 +63,8 @@ public class DailyFragment extends Fragment {
         dailyViewModel = ViewModelProviders.of(this).get(DailyViewModel.class);
         View root = inflater.inflate(R.layout.fragment_daily, container, false);
 
-        final TextView budget = root.findViewById(R.id.daily_myBudget_amount);
-        final Button changeBudget = root.findViewById(R.id.daily_myBudget_change);
-        changeBudget.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final EditText newBudgetEditText = new EditText(getContext());
-                newBudgetEditText.setInputType(InputType.TYPE_CLASS_NUMBER);
-                AlertDialog.Builder changeBudgetDialog = new AlertDialog.Builder(getActivity());
-                changeBudgetDialog.setCancelable(true)
-                        .setTitle(R.string.daily_myBudget_change_prompt) // monthly budget instead
-                        .setIcon(R.drawable.ic_home_black_24dp)
-                        .setView(newBudgetEditText)
-                        .setPositiveButton(R.string.AlertDialog_PositiveButton, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                BigDecimal newBudget = new BigDecimal(0.0f);
-                                try {
-                                    newBudget = new BigDecimal(newBudgetEditText.getText().toString())
-                                            .setScale(2, BigDecimal.ROUND_HALF_UP);
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                                if (newBudget.floatValue() < 0) {
-                                    newBudget = new BigDecimal(0.00f);
-                                }
-                                budget.setText(String.valueOf(newBudget));
-                                budget.append("   ");
-                            }
-                        })
-                        .show();
-            }
-        });
+
+       imageView = root.findViewById(R.id.imageView);
         deleteButton = root.findViewById(R.id.delete);
         searchButton = root.findViewById(R.id.searchButton);
         searchText = root.findViewById(R.id.searchText);
@@ -236,7 +207,7 @@ public class DailyFragment extends Fragment {
     private void showAllItems(SmartTable<Item> smartTable, TableData<Item> tableData) {
         smartTable.setTableData(tableData);
         smartTable.setZoom(true);
-        smartTable.getConfig().setContentStyle(new FontStyle(50, Color.BLUE));
+        smartTable.getConfig().setContentStyle(new FontStyle(70, Color.BLUE));
         smartTable.getConfig().setMinTableWidth(1024);
 
         smartTable.refreshDrawableState();

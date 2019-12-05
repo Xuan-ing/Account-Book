@@ -586,6 +586,7 @@
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="hintBarChart">show details in the last 7 days</string>
     <string name="incomePrompt">income</string>
     <string name="insertAmountOfMoney">Amount of money: </string>
     <string name="insertDescriptionHint">Describe it here: </string>
@@ -600,6 +601,7 @@
     <string name="searchButton">search</string>
     <string name="searchHint">only yyyy-MM-dd supported</string>
     <string name="search_menu_title">Search</string>
+    <string name="startDay">start from this date</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="tableName">Details</string>
     <string name="title_daily">Daily</string>

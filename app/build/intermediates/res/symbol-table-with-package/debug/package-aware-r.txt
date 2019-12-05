@@ -1027,6 +1027,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable expend
+drawable header
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
@@ -1055,6 +1056,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable unchecked
 id ALT
+id BarChart
 id CTRL
 id FUNCTION
 id META
@@ -1105,9 +1107,6 @@ id contentPanel
 id coordinator
 id custom
 id customPanel
-id daily_myBudget
-id daily_myBudget_amount
-id daily_myBudget_change
 id daily_table
 id decor_content_parent
 id default_activity_button
@@ -1145,6 +1144,7 @@ id ifRoom
 id image
 id imageExpend
 id imageIncome
+id imageView
 id info
 id insertAmountOfMoney
 id insertDescription
@@ -1217,6 +1217,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id shortcut
+id show
 id showCustom
 id showHome
 id showTitle
@@ -1234,6 +1235,8 @@ id src_in
 id src_over
 id standard
 id start
+id startButton
+id startText
 id stretch
 id submenuarrow
 id submit_area
@@ -1248,7 +1251,6 @@ id textSpacerNoTitle
 id textStart
 id text_input_password_toggle
 id text_monthly
-id text_weekly
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1414,6 +1416,7 @@ string expensePrompt
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
+string hintBarChart
 string incomePrompt
 string insertAmountOfMoney
 string insertDescriptionHint
@@ -1428,6 +1431,7 @@ string path_password_strike_through
 string searchButton
 string searchHint
 string search_menu_title
+string startDay
 string status_bar_notification_info_overflow
 string tableName
 string title_daily
