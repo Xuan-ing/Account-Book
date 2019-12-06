@@ -287,7 +287,7 @@ public class DailyFragment extends Fragment {
             long time1 = date1.getTime();
             long time2 = date2.getTime();
 
-            long time = time2 - time1;
+            long time = time1 - time2;
             day = (int) (time / (1000 * 60 * 60 * 24));
 
         } catch (ParseException e) {

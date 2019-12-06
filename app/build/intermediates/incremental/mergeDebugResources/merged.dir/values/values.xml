@@ -573,6 +573,8 @@
     <string name="app_name" translatable="false">Account Book</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
+    <string name="changeToExpenseView">expense</string>
+    <string name="changeToIncomeView">income</string>
     <string name="character_counter_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="checkColumn">IsChecked</string>
@@ -586,7 +588,7 @@
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
-    <string name="hintBarChart">show details in the last 7 days</string>
+    <string name="hintBarChart">show details in the last week and drag to see last month</string>
     <string name="incomePrompt">income</string>
     <string name="insertAmountOfMoney">Amount of money: </string>
     <string name="insertDescriptionHint">Describe it here: </string>
@@ -600,6 +602,7 @@
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="searchButton">search</string>
     <string name="searchHint">only yyyy-MM-dd supported</string>
+    <string name="searchYearlyHint">Search for a year, like 2019</string>
     <string name="search_menu_title">Search</string>
     <string name="startDay">start from this date</string>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -607,6 +610,8 @@
     <string name="title_daily">Daily</string>
     <string name="title_monthly">Monthly</string>
     <string name="title_weekly">Weekly</string>
+    <string name="totalAmountExpensePrompt">Total Expense: </string>
+    <string name="totalAmountIncomePrompt">Total Income: </string>
     <string name="typeColumn">Type</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

@@ -2,7 +2,6 @@ package dhu.cst.the170910224andthe170120321.accountbook.ui.weekly;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +22,7 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 
 import java.math.BigDecimal;
@@ -45,6 +45,7 @@ public class WeeklyFragment extends Fragment {
     private EditText startText;
     private TextView show;
     private String today;
+    private  XAxis xAxis;
     ArrayList<String> date = new ArrayList<>();
     BigDecimal total[] = new BigDecimal[2];
 
@@ -93,11 +94,10 @@ public class WeeklyFragment extends Fragment {
         barChart.animateXY(2000,2000);
 
 
-        XAxis xAxis = barChart.getXAxis();
+        xAxis = barChart.getXAxis();
         xAxis.setDrawAxisLine(false);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAxisMinimum(0f);
-        xAxis.setAxisMaximum(7f);
         xAxis.setGranularity(1f);
         xAxis.setCenterAxisLabels(true);
         MakeBarChart(today);
@@ -135,7 +135,7 @@ public class WeeklyFragment extends Fragment {
             long time1 = date1.getTime();
             long time2 = date2.getTime();
 
-            long time = time2 - time1;
+            long time = time1 - time2;
             day = (int) (time / (1000 * 60 * 60 * 24));
 
         } catch (ParseException e) {
@@ -168,14 +168,14 @@ public class WeeklyFragment extends Fragment {
         cursor.close();
     }
 
-    private void MakeBarChart(String dayString){
+    private void MakeBarChart(final String dayString){
 
         ArrayList<BarEntry> income = new ArrayList<>();
         ArrayList<BarEntry> expend = new ArrayList<>();
         date.clear();
 
-        for(int i=0; i<7; ++i) {
-            String day = getPastDate(6-i,dayString);
+        for(int i=0; i<31; ++i) {
+            String day = getPastDate(i,dayString);
             date.add(day);
             readFromSQLiteToInt(day);
             BarEntry incomeEntry = new BarEntry(i,total[0].floatValue());
@@ -185,9 +185,9 @@ public class WeeklyFragment extends Fragment {
         }
 
         BarDataSet incomeDataSet = new BarDataSet(income,"每日收入");
-        incomeDataSet.setColor(Color.BLUE);
+        incomeDataSet.setColor(0xFF38E8FC);
         BarDataSet expendDataSet = new BarDataSet(expend,"每日支出");
-        expendDataSet.setColor(Color.RED);
+        expendDataSet.setColor(0xFFFC7C5C);
 
         ArrayList<IBarDataSet> iBarDataSets = new ArrayList<>();
         iBarDataSets.add(incomeDataSet);
@@ -197,7 +197,19 @@ public class WeeklyFragment extends Fragment {
 
         barChart.setData(barData);
         barChart.groupBars(0f,0.08f,0.06f);
+
+        xAxis.setAxisMaximum(31f);
+        xAxis.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                String str = getPastDate((int)value,dayString);
+
+                return str.substring(2) ;
+            }
+        });
+        barChart.setVisibleXRange(0,7);
         barChart.invalidate();
+
 
     }
 
