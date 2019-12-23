@@ -1026,6 +1026,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable distinctive_button
 drawable expend
 drawable header
 drawable ic_dashboard_black_24dp
@@ -1144,7 +1145,6 @@ id ifRoom
 id image
 id imageExpend
 id imageIncome
-id imageView
 id info
 id insertAmountOfMoney
 id insertDescription
@@ -1404,6 +1404,8 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string addExpenseImage
+string addIncomeImage
 string amountColumn
 string app_name
 string appbar_scrolling_view_behavior

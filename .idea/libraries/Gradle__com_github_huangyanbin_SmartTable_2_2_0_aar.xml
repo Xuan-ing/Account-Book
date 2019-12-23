@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.huangyanbin:SmartTable:2.2.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/175726c9aab73d02317aceddb3785865/SmartTable-2.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/175726c9aab73d02317aceddb3785865/SmartTable-2.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/14fb8c72b4adacc69bf1c69bce9ba9c8/SmartTable-2.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/14fb8c72b4adacc69bf1c69bce9ba9c8/SmartTable-2.2.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/75970a4f97766456118f33140c881f142defb5d2/SmartTable-2.2.0-javadoc.jar!/" />

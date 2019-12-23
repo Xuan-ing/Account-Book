@@ -21,12 +21,14 @@
     <string name="expensePrompt">expense</string>
     <string name="deleteButton">delete</string>
     <string name="searchButton">search</string>
-    <string name="searchHint">only yyyy-MM-dd supported</string>
-    <string name="startDay">start from this date</string>
-    <string name="hintBarChart">show details in the last week and drag to see last month</string>
+    <string name="searchHint">format yyyy-MM-dd supported</string>
+    <string name="startDay">from this date</string>
+    <string name="hintBarChart">This week\'s details. Drag to see more.</string>
     <string name="searchYearlyHint">Search for a year, like 2019</string>
     <string name="totalAmountIncomePrompt">Total&#160;Income:&#160;</string>
     <string name="totalAmountExpensePrompt">Total&#160;Expense:&#160;</string>
     <string name="changeToIncomeView">income</string>
     <string name="changeToExpenseView">expense</string>
+    <string name="addExpenseImage">Add an expense item</string>
+    <string name="addIncomeImage">Add an income item</string>
 </resources>

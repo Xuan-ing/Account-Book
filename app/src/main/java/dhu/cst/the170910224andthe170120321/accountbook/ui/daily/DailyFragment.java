@@ -64,7 +64,7 @@ public class DailyFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_daily, container, false);
 
 
-       imageView = root.findViewById(R.id.imageView);
+       //imageView = root.findViewById(R.id.imageView);
         deleteButton = root.findViewById(R.id.delete);
         searchButton = root.findViewById(R.id.searchButton);
         searchText = root.findViewById(R.id.searchText);
@@ -170,7 +170,6 @@ public class DailyFragment extends Fragment {
         sqLiteDatabase.execSQL("create table if not exists statement(time Date not null, " +
                 "type varchar(10), money double not null, description varchar(1000));");
     }
-
     private List<Item> readFromSQLiteToList(final String dayString) {
         /*
          * database initialization
