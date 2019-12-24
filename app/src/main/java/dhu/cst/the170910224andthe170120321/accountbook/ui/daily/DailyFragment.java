@@ -13,17 +13,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.bin.david.form.core.SmartTable;
+import com.bin.david.form.core.TableConfig;
+import com.bin.david.form.data.CellInfo;
 import com.bin.david.form.data.column.Column;
+import com.bin.david.form.data.format.bg.BaseCellBackgroundFormat;
 import com.bin.david.form.data.format.draw.ImageResDrawFormat;
 import com.bin.david.form.data.style.FontStyle;
 import com.bin.david.form.data.table.TableData;
@@ -52,16 +55,17 @@ public class DailyFragment extends Fragment {
     private Column<String> time;
     private SQLiteDatabase sqLiteDatabase;
     private SmartTable<Item> smartTable;
-    private Button deleteButton, searchButton;
+    private Button searchButton;
+    private ImageButton deleteButton;
     private TextView searchText;
-    private ImageView imageView;
     private List<Integer> isCheck;
     private String today;
+    private int selected_num = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         dailyViewModel = ViewModelProviders.of(this).get(DailyViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_daily, container, false);
+        final View root = inflater.inflate(R.layout.fragment_daily, container, false);
 
 
        //imageView = root.findViewById(R.id.imageView);
@@ -71,6 +75,17 @@ public class DailyFragment extends Fragment {
         smartTable = root.findViewById(R.id.daily_table);
 
         componentsInitialization();
+        smartTable.getConfig().setContentCellBackgroundFormat(new BaseCellBackgroundFormat<CellInfo>() {
+            @Override
+            public int getBackGroundColor(CellInfo cellInfo) {
+                if (cellInfo.row % 2 != 0) {
+                    return ContextCompat.getColor(root.getContext(), R.color.grey_background);
+                } else {
+                    return TableConfig.INVALID_COLOR;
+                }
+            }
+
+        });
         List<Item> itemList = readFromSQLiteToList(today);
         TableData<Item> tableData = readFromListToTableData(itemList);
         showAllItems(smartTable, tableData);
@@ -94,7 +109,7 @@ public class DailyFragment extends Fragment {
         isCheck = new LinkedList<>();
         description = new Column<>(getString(R.string.descriptionColumn),"description");
         type = new Column<>(getString(R.string.typeColumn),"type");
-        type.setAutoMerge(true);
+        type.setAutoMerge(false);
         money = new Column<>(getString(R.string.amountColumn),"money");
         money.setAutoCount(true);
         int size = DensityUtils.dp2px(getActivity(), 15);
@@ -109,7 +124,7 @@ public class DailyFragment extends Fragment {
                 if (operation.getDatas().get(position)) {
                     return R.drawable.checked;
                 } else {
-                    return R.drawable.unchecked;
+                    return 0;
                 }
             }
         });
@@ -120,9 +135,16 @@ public class DailyFragment extends Fragment {
                 if (operation.getDatas().get(position)) {
                     operation.getDatas().set(position, false);
                     getSelection(position, false);
+                    --selected_num;
                 } else {
                     operation.getDatas().set(position, true);
                     getSelection(position, true);
+                    ++selected_num;
+                }
+                if (selected_num != 0) {
+                    deleteButton.setVisibility(View.VISIBLE);
+                } else {
+                    deleteButton.setVisibility(View.INVISIBLE);
                 }
                 smartTable.refreshDrawableState();
                 smartTable.invalidate();
@@ -150,6 +172,7 @@ public class DailyFragment extends Fragment {
                 List<Item> items = readFromSQLiteToList(today);
                 TableData<Item> tableData = readFromListToTableData(items);
                 showAllItems(smartTable, tableData);
+                deleteButton.setVisibility(View.INVISIBLE);
             }
         });
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -163,6 +186,7 @@ public class DailyFragment extends Fragment {
                 }
             }
         });
+
     }
 
     private void sqLiteDatabaseInitialization(final String pathName) {
@@ -170,6 +194,7 @@ public class DailyFragment extends Fragment {
         sqLiteDatabase.execSQL("create table if not exists statement(time Date not null, " +
                 "type varchar(10), money double not null, description varchar(1000));");
     }
+
     private List<Item> readFromSQLiteToList(final String dayString) {
         /*
          * database initialization
@@ -200,14 +225,18 @@ public class DailyFragment extends Fragment {
 
     private TableData<Item> readFromListToTableData(final List<Item> itemList) {
         return new TableData<>(
-                getString(R.string.tableName), itemList, type, money, description, operation, time);
+                getString(R.string.tableName), itemList, type, money, time, description, operation);
     }
 
     private void showAllItems(SmartTable<Item> smartTable, TableData<Item> tableData) {
         smartTable.setTableData(tableData);
-        smartTable.setZoom(true);
-        smartTable.getConfig().setContentStyle(new FontStyle(70, Color.BLUE));
-        smartTable.getConfig().setMinTableWidth(1024);
+        smartTable.setZoom(false);
+        smartTable.getConfig()
+                .setShowXSequence(false)
+                .setShowTableTitle(true)
+                .setShowColumnTitle(false)
+                .setContentStyle(new FontStyle(50, Color.BLACK))
+                .setMinTableWidth(100);
 
         smartTable.refreshDrawableState();
         smartTable.invalidate();

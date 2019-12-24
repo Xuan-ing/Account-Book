@@ -651,6 +651,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grey_background
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1019,6 +1020,12 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_daily_weekly_monthly
+drawable baseline_add_black_24dp
+drawable baseline_clear_black_24dp
+drawable baseline_insert_chart_outlined_black_24dp
+drawable baseline_pie_chart_black_24dp
+drawable baseline_remove_black_24dp
+drawable baseline_today_black_24dp
 drawable checked
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -1053,6 +1060,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable outline_calendar_today_black_24dp
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable unchecked
@@ -1420,6 +1428,7 @@ string daily_myBudget_change
 string daily_myBudget_change_prompt
 string dateColumn
 string deleteButton
+string deleteView
 string descriptionColumn
 string expensePrompt
 string fab_transformation_scrim_behavior
@@ -1439,6 +1448,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string searchButton
 string searchHint
+string searchLabel
 string searchYearlyHint
 string search_menu_title
 string startDay
@@ -1946,6 +1956,7 @@ style Widget_MaterialComponents_TextInputLayout_OutlinedBox
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense
 style Widget_MaterialComponents_Toolbar
 style Widget_Support_CoordinatorLayout
+style distinctiveEditText
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -2032,3 +2043,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml searchable

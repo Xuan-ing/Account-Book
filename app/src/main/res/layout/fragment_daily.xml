@@ -29,6 +29,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:hint="@string/searchHint"
+            style="@style/distinctiveEditText"
+            android:drawableStart="@drawable/outline_calendar_today_black_24dp"
+            android:drawablePadding="8dp"
             android:id="@+id/searchText"/>
         <Button
             android:layout_width="wrap_content"
@@ -44,6 +47,7 @@
 
     <com.bin.david.form.core.SmartTable
         android:id="@+id/daily_table"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -62,7 +66,7 @@
             android:layout_gravity="bottom"
             android:background="#00FFFFFF"
             android:contentDescription="@string/addExpenseImage"
-            android:src="@drawable/expend">
+            android:src="@drawable/baseline_remove_black_24dp">
         </ImageButton>
 
         <ImageButton
@@ -72,15 +76,18 @@
             android:layout_gravity="bottom"
             android:background="#00FFFFFF"
             android:contentDescription="@string/addIncomeImage"
-            android:src="@drawable/income">
+            android:src="@drawable/baseline_add_black_24dp">
         </ImageButton>
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/delete"
-            android:layout_gravity="end|bottom"
-            android:text="@string/deleteButton">
-        </Button>
+            android:layout_gravity="bottom"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/deleteView"
+            android:visibility="invisible"
+            android:src="@drawable/baseline_clear_black_24dp">
+        </ImageButton>
     </LinearLayout>
 </LinearLayout>

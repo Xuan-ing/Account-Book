@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name" translatable="false">Account Book</string>
     <string name="title_daily">Daily</string>
-    <string name="title_weekly">Weekly</string>
-    <string name="title_monthly">Monthly</string>
+    <string name="title_weekly">Weekly/Monthly</string>
+    <string name="title_monthly">Yearly</string>
     <string name="OptionsMenu_SignUp">I\'m new here</string>
     <string name="OptionsMenu_SignIn">Sign In</string>
     <string name="daily_myBudget">My Budget: </string>
     <string name="daily_myBudget_change">Modify</string>
     <string name="daily_myBudget_change_prompt">Enter your new budget: </string>
     <string name="AlertDialog_PositiveButton">OK</string>
-    <string name="tableName">Details</string>
+    <string name="tableName">Records of Income and Expense</string>
     <string name="descriptionColumn">Description</string>
     <string name="typeColumn">Type</string>
     <string name="amountColumn">Amount</string>
@@ -21,8 +21,8 @@
     <string name="expensePrompt">expense</string>
     <string name="deleteButton">delete</string>
     <string name="searchButton">search</string>
-    <string name="searchHint">format yyyy-MM-dd supported</string>
-    <string name="startDay">from this date</string>
+    <string name="searchHint">yyyy-MM-dd only</string>
+    <string name="startDay">from this</string>
     <string name="hintBarChart">This week\'s details. Drag to see more.</string>
     <string name="searchYearlyHint">Search for a year, like 2019</string>
     <string name="totalAmountIncomePrompt">Total&#160;Income:&#160;</string>
@@ -31,4 +31,6 @@
     <string name="changeToExpenseView">expense</string>
     <string name="addExpenseImage">Add an expense item</string>
     <string name="addIncomeImage">Add an income item</string>
+    <string name="searchLabel">searchLabel</string>
+    <string name="deleteView">delete checked item</string>
 </resources>
