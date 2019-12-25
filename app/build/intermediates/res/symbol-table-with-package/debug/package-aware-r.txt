@@ -615,6 +615,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color beautifulColor
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1023,6 +1024,7 @@ drawable background_daily_weekly_monthly
 drawable baseline_add_black_24dp
 drawable baseline_clear_black_24dp
 drawable baseline_insert_chart_outlined_black_24dp
+drawable baseline_keyboard_voice_black_24dp
 drawable baseline_pie_chart_black_24dp
 drawable baseline_remove_black_24dp
 drawable baseline_today_black_24dp
@@ -1156,6 +1158,8 @@ id imageIncome
 id info
 id insertAmountOfMoney
 id insertDescription
+id insertDescriptionEditText
+id insertMoneyEditText
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1285,6 +1289,8 @@ id up
 id useLogo
 id view_offset_helper
 id visible
+id voiceInputImageButton1
+id voiceInputImageButton2
 id withText
 id wrap
 id wrap_content
@@ -1353,6 +1359,7 @@ layout design_text_input_password_icon
 layout fragment_daily
 layout fragment_monthly
 layout fragment_weekly
+layout insert_dialog
 layout insert_layout
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1430,6 +1437,7 @@ string dateColumn
 string deleteButton
 string deleteView
 string descriptionColumn
+string descriptionTextView
 string expensePrompt
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -1956,6 +1964,7 @@ style Widget_MaterialComponents_TextInputLayout_OutlinedBox
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense
 style Widget_MaterialComponents_Toolbar
 style Widget_Support_CoordinatorLayout
+style alert_dialog
 style distinctiveEditText
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity

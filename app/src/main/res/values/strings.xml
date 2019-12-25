@@ -33,4 +33,5 @@
     <string name="addIncomeImage">Add an income item</string>
     <string name="searchLabel">searchLabel</string>
     <string name="deleteView">delete checked item</string>
+    <string name="descriptionTextView">Description:&#160;</string>
 </resources>

@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,7 +79,7 @@ public class DailyFragment extends Fragment {
         smartTable.getConfig().setContentCellBackgroundFormat(new BaseCellBackgroundFormat<CellInfo>() {
             @Override
             public int getBackGroundColor(CellInfo cellInfo) {
-                if (cellInfo.row % 2 != 0) {
+                if (cellInfo.row % 2 == 0) {
                     return ContextCompat.getColor(root.getContext(), R.color.grey_background);
                 } else {
                     return TableConfig.INVALID_COLOR;
@@ -234,7 +235,8 @@ public class DailyFragment extends Fragment {
         smartTable.getConfig()
                 .setShowXSequence(false)
                 .setShowTableTitle(true)
-                .setShowColumnTitle(false)
+                .setFixedYSequence(false)
+                //.setShowColumnTitle(false)
                 .setContentStyle(new FontStyle(50, Color.BLACK))
                 .setMinTableWidth(100);
 
@@ -260,11 +262,13 @@ public class DailyFragment extends Fragment {
 
     private void insertTransaction(final String mode) {
         LayoutInflater layoutInflater = getLayoutInflater();
-        final View view = layoutInflater.inflate(R.layout.insert_layout, null);
+        final View view = layoutInflater.inflate(R.layout.insert_dialog, null);
 
-        new AlertDialog.Builder(getActivity())
-                .setTitle(mode.toUpperCase())
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        builder.setMessage(mode.toUpperCase())
                 .setCancelable(true)
+                .setInverseBackgroundForced(true)
                 .setView(view)
                 .setPositiveButton(R.string.AlertDialog_PositiveButton, new DialogInterface.OnClickListener() {
                     @Override
@@ -278,8 +282,10 @@ public class DailyFragment extends Fragment {
                         String description = descriptionText.getText().toString();
                         insertIntoDatabase(mode, moneyAmount, description);
                     }
-                })
-                .show();
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.beautifulColor)));
     }
 
     private void insertIntoDatabase(String mode, BigDecimal moneyAmount, String description) {
